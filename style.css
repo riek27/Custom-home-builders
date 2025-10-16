@@ -286,18 +286,6 @@ img {
     letter-spacing: 1px;
 }
 
-/* Alternative Logo Style (Image-based) */
-.logo-image {
-    height: 50px;
-    width: auto;
-    transition: var(--transition);
-}
-
-.logo-image:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
-}
-
 /* Mobile Logo Adjustments */
 @media (max-width: 768px) {
     .logo {
@@ -320,10 +308,6 @@ img {
     .logo-sub {
         font-size: 0.8rem;
     }
-    
-    .logo-image {
-        height: 40px;
-    }
 }
 
 /* Scrolled Header Logo */
@@ -339,11 +323,6 @@ header.scrolled .logo-icon i {
 header.scrolled .logo-main {
     font-size: 1.5rem;
 }
-
-header.scrolled .logo-image {
-    height: 40px;
-}
-
 /* Header Styles */
 header {
     position: fixed;
