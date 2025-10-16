@@ -195,6 +195,76 @@
             color: var(--white);
         }
 
+        /* Logo Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .logo-icon:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-icon:before {
+            transform: translateX(100%);
+        }
+
+        .logo-icon i {
+            color: var(--white);
+            font-size: 1.5rem;
+            z-index: 1;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-main {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .logo-sub {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary);
+            margin-top: 2px;
+            letter-spacing: 1px;
+        }
+
         /* Header Styles */
         header {
             position: fixed;
@@ -217,16 +287,6 @@
             align-items: center;
             padding: 20px 0;
             transition: var(--transition);
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .logo span {
-            color: var(--primary);
         }
 
         .nav-links {
@@ -294,9 +354,8 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            transform: scale(1.1);
-            transition: transform 8s ease-out;
-            animation: slideshow 24s infinite;
+            transform: scale(1.2) translateX(30px);
+            animation: slideshow 12s infinite;
         }
 
         .slide:nth-child(1) {
@@ -306,39 +365,39 @@
 
         .slide:nth-child(2) {
             background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80');
-            animation-delay: 6s;
+            animation-delay: 3s;
         }
 
         .slide:nth-child(3) {
             background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
-            animation-delay: 12s;
+            animation-delay: 6s;
         }
 
         .slide:nth-child(4) {
             background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1558&q=80');
-            animation-delay: 18s;
+            animation-delay: 9s;
         }
 
         @keyframes slideshow {
             0% {
                 opacity: 0;
-                transform: scale(1.1);
+                transform: scale(1.2) translateX(30px);
             }
             10% {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1.2) translateX(30px);
             }
-            25% {
+            30% {
                 opacity: 1;
-                transform: scale(1);
+                transform: scale(1) translateX(0);
             }
-            35% {
-                opacity: 0;
-                transform: scale(1.1);
+            90% {
+                opacity: 1;
+                transform: scale(1) translateX(0);
             }
             100% {
                 opacity: 0;
-                transform: scale(1.1);
+                transform: scale(1) translateX(0);
             }
         }
 
@@ -900,6 +959,28 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+            
+            /* Mobile Logo Adjustments */
+            .logo {
+                gap: 8px;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo-icon i {
+                font-size: 1.2rem;
+            }
+            
+            .logo-main {
+                font-size: 1.5rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.8rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1222,4 +1303,4 @@
         });
     </script>
 </body>
-</html>                
+</html>
